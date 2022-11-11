@@ -23,7 +23,7 @@ const Main = (props) => {
                     </button>
                     <button>
                         <img src="/images/article-icon.svg" alt="" />
-                        <span>Write article</span>
+                        <span>Article</span>
                     </button>
                 </div>
             </ShareBox>
@@ -45,7 +45,7 @@ const Main = (props) => {
                     <Description>Description</Description>
                     <SharedImg>
                         <a>
-                            <img src="/images/shared-image.jpg" alt="" />
+                            <img src="https://images.unsplash.com/photo-1537989036885-80b4d200958d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="" />
                         </a>
                     </SharedImg>
                     <SocialCounts>
@@ -107,6 +107,7 @@ const ShareBox = styled(CommonCard)`
     background: white;
     div {
         button {
+            cursor: pointer;
             outline: none;
             color: rgba(0, 0, 0, 0.6);
             font-size: 14px;
@@ -139,16 +140,27 @@ const ShareBox = styled(CommonCard)`
         }
         &:nth-child(2) {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: no-wrap;
             justify-content: space-around;
-            padding-bottom: 4px;
+            padding: 4px;
             button {
                 img {
+                    width: 30px;
                     margin: 0 4px 0 -2px;
                 }
                 span {
                     color: #70b5f9;
                 }
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
+            @media (max-width: 468px) {
+                button {
+                img {
+                    width: 24px;
+                }
+            }
             }
         }
     }
@@ -205,6 +217,9 @@ const SharedActor = styled.div`
         background: transparent;
         border: none;
         outline: none;
+        img {
+            padding-top: 7px;
+        }
     }
 `
 
@@ -232,6 +247,7 @@ const SharedImg = styled.div`
 const SocialCounts = styled.ul`
     line-height: 1.3;
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
     overflow: auto;
     margin: 0 16px;
@@ -243,28 +259,52 @@ const SocialCounts = styled.ul`
         font-size: 12px;
         button {
             display: flex;
+            background-color: white;
+            border : none;
+            span{
+                padding: 1px 0 1px 2px;
+
+            }
         }
+    }
+    img{
+        width: 16px;
     }
 `
 
 const SocialActions = styled.div`
     align-items: center;
     display: flex;
-    justify-content: flex-start;
-    margin: 0;
-    min-height: 40px;
-    padding: 4px 8px;
+    justify-content: space-between;
+    min-height: 60px;
     button {
         display: inline-flex;
         align-items: center;
-        padding: 8px;
         color: #0a66c2;
+        background-color: white;
+        border: none;
+        :hover{
+            cursor: pointer;
+            background-color: #e9e5df;
+            border-radius: 5px;
+            transform: scale(1.05);
+        }
         @media (min-width: 768px) {
             span {
                 margin-left: 8px;
             }
         }
     }
+    img{
+        width: 16px;
+    }
+    @media (min-width: 768px) {
+        button{
+           padding: 15px 25px;
+        }
+    }
+    padding-left:1rem;
+    padding-right:1rem;
 `
 
 export default Main

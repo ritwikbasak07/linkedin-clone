@@ -193,6 +193,8 @@ const NavList = styled.li`
             min-width: 70px;
         }
     }
+
+    
     &:hover,
     &:active {
         a {
@@ -200,6 +202,16 @@ const NavList = styled.li`
                 color: rgba(0, 0, 0, 0.9);
             }
         }
+    }
+    @media screen  and (max-width: 768px) {
+        :nth-child(4){
+            position: absolute;
+            top: 0.7vh;
+            right: -3vw;
+        }
+        :nth-child(7) a{
+            display: none;
+    }
     }
 `;
 
@@ -242,6 +254,9 @@ const User = styled(NavList)`
 
 const Work = styled(User)`
     border-left: 1px solid rgba(0, 0, 0, 0.08);
+    @media screen and (max-width: 768px) {
+        border-left: none;
+    }
 `;
 
 export default Header;
