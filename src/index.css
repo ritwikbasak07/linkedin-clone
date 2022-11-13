@@ -18,3 +18,21 @@ div, h1, h2, h3, h4, h5, h6, header, html, i, img, input, label, li, p, span, sm
   vertical-align: baseline;
   background: transparent;
 }
+
+@-webkit-keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
